@@ -1,6 +1,7 @@
 {
-  "name": "render-ping-bot",
+  "name": "backend-pinger",
   "version": "1.0.0",
+  "description": "Keep Render backend alive by pinging every 30 minutes",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
