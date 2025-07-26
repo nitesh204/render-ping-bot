@@ -1,9 +1,10 @@
 name: Keep Render Backend Alive
 
 on:
+  push:
   schedule:
-    - cron: '*/30 * * * *'  # Run every 30 minutes (UTC)
-  workflow_dispatch:        # Manual trigger option
+    - cron: '*/30 * * * *'  # Run every 30 minutes
+  workflow_dispatch:
 
 jobs:
   ping:
@@ -11,4 +12,4 @@ jobs:
 
     steps:
       - name: Send Ping to Render Backend
-        run: curl https://skill-circle-backend.onrender.com/
+        run: curl -s -o /dev/null -w "%{http_code}" https://skill-circle-backend.onrender.com/
